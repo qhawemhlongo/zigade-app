@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zigade | Community Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --zg-forest: #003D34;
+            --zg-teal: #159A91;
+            --zg-amber: #D4AF53;
+            --zg-bg: #0A1F1C; /* Dark mode background from your screenshot */
+            --zg-card: #112D29;
+            --zg-text: #E0E7E5;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--zg-bg);
+            color: var(--zg-text);
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .logo-icon {
+            width: 30px; height: 30px;
+            background: white;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: var(--zg-forest);
+            font-weight: bold; font-size: 14px;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        
+        h1 { font-size: 2.5rem; color: white; margin-bottom: 15px; line-height: 1.1; }
+        p.subtitle { font-family: 'Inter', sans-serif; color: #A0B4AF; font-size: 1rem; margin-bottom: 40px; }
+        
+        .pilot-box {
+            border: 1px solid rgba(212, 175, 83, 0.3);
+            background: rgba(212, 175, 83, 0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .form-group { margin-bottom: 25px; }
+        label { display: block; font-family: 'Inter', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; color: var(--zg-teal); }
+        select, .category-btn {
+            width: 100%; padding: 15px;
+            background: var(--zg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white; font-family: 'Inter', sans-serif;
+            font-size: 1rem; appearance: none;
+        }
+        
+        .watch-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .watch-tag { padding: 8px 15px; border: 1px solid rgba(255,255,255,0.2); font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+
+        .sample-btn {
+            background: var(--zg-amber); color: var(--zg-forest);
+            border: none; padding: 15px 30px; font-weight: bold;
+            font-family: 'Inter', sans-serif; cursor: pointer; margin-top: 10px;
+        }
+
+        .report-card {
+            background: #E8E4D9; color: #111;
+            padding: 30px; margin-top: 40px;
+        }
+        .report-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
+        .report-tag { font-family: 'Inter', sans-serif; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 10px; display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">Z</div> ZIGADE
+        </div>
+        <div>&#9776;</div>
+    </header>
+
+    <div class="container">
+        <h1>Know what is happening around you.</h1>
+        <p class="subtitle">Neighbourhoods you care about, and the routes between them. A weekly letter and, when you ask for it, an immediate note.</p>
+
+        <div class="pilot-box">
+            <strong>Pilot preview for eThekwini.</strong> Every item below is an illustrative scenario, not live intelligence, and not a statement about any neighbourhood. An empty list is not evidence that a place is safe.
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-bottom: 30px;">
+            <button class="sample-btn">Load a sample week</button>
+            <button class="sample-btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: white;">Clear places</button>
+        </div>
+
+        <div class="form-group">
+            <label>Home neighbourhood</label>
+            <select><option>Not set</option><option>Umhlanga</option><option>KwaMashu</option></select>
+        </div>
+
+        <div class="form-group">
+            <label>Work neighbourhood</label>
+            <select><option>Not set</option><option>Durban North</option><option>Phoenix</option></select>
+        </div>
+
+        <div class="form-group">
+            <label>Also Watch</label>
+            <div class="watch-tags">
+                <div class="watch-tag">Umhlanga</div>
+                <div class="watch-tag">Durban North</div>
+                <div class="watch-tag">Phoenix</div>
+                <div class="watch-tag">KwaMashu</div>
+            </div>
+        </div>
+
+        <div class="report-card">
+            <span class="report-tag">Weekly Digest &middot; Sample</span>
+            <h3>Your week, as a letter</h3>
+            <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; margin-top: 20px; color: #555;">No places yet. The letter waits.</p>
+            <p style="font-family: 'Inter', sans-serif; font-size: 0.8rem; margin-top: 40px; color: #888; border-top: 1px solid #ccc; padding-top: 10px;">Places with no line in this letter are not cleared. Sample material only.</p>
+        </div>
+    </div>
+
+</body>
+</html>
